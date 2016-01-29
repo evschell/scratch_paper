@@ -43,7 +43,7 @@ module SPI #(parameter OP_MODE=1)
         if (write) begin
           if (counter < 24) begin
             data[0] <= din;
-            data[15:1] <= din[14:0];
+            data[15:1] <= data[14:0];
             counter <= counter + 1;
           end
           else if (counter == 24) begin
