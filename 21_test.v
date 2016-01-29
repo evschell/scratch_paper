@@ -39,9 +39,9 @@ module SPI #(parameter OP_MODE=1)
         counter <= counter + 1;
       end
 		
-		  else if (counter < 8) begin
-			  counter <= counter + 1;
-			end
+      else if (counter < 8) begin
+	counter <= counter + 1;
+      end
       
       else begin
         if (write) begin
