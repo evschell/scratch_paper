@@ -38,8 +38,12 @@ module SPI #(parameter OP_MODE=1)
         write <= din;
         counter <= counter + 1;
       end
+		
+		  else if (counter < 8) begin
+			  counter <= counter + 1;
+			end
       
-      else if (counter > 7) begin
+      else begin
         if (write) begin
           if (counter < 24) begin
             data[0] <= din;
@@ -61,7 +65,9 @@ module SPI #(parameter OP_MODE=1)
             counter <= 0;
           end
         end
+		  
       end
+		
     end
   end
 endmodule
